@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Image Text Translation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="/webjars/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    <!-- thymeleaf -->
+</head>
+<body>
+<div class="container">
+	<header class="col-cs-1 text center"> 
+		<h1>Image Text Extraction and Translation</h1>	
+	</header>
+	<div class="row">
+		<div class="col-md-4">
+			<img id="imagePreview" src="#" alt="Uploaded image">
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+			<!-- <form name="imageupload" action="http://localhost:8081/imageUpload">
+				//	<input type="file" name="imageFile" id="imageFile">
+				//	<br>
+				//	<button type="submit" class="btn btn-default" value="Uploaded Image" name="submit">Submit</button>
+				//</form> -->
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<form id="textTranslationFrom" name="imageupload" onsubmit="getTranslation(event)" action="javascript:void(0);">
+					<textarea rows="4" cols="50" id="textSource"></textarea>
+					<label for="langFrom">Language From</label>
+					<select name="langFrom" id="langFrom">
+					    <option value="en" selected="selected">English</option>
+					    <option value="fr">French</option>
+					</select>
+					<label for="langTo">Language TO</label>
+					<select name="langTo" id="langTo">
+					    <option value="en" selected="selected">English</option>
+					    <option value="fr">French</option>
+					</select>
+					<button type="submit" class="btn btn-default" value="text translation" name="submit">Submit</button>
+				</form>
+				<br>
+				<br>
+				<p id="translatedText"></p>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/imageDisplay.js"></script>
+<script type="text/javascript" src="js/textTranslation.js"></script>
+</body>
+</html>
