@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class TranslatorController {
 	
 	
 	@GetMapping("/translate")
-	@CrossOrigin(origins = "http://localhost:8080")
     public TranslationJSON translate(@RequestParam(value="text", defaultValue="No text inputed") String text, 
 								@RequestParam(value="langTo", defaultValue="en") String langTo, 
 								@RequestParam(value="langFrom", defaultValue="en") String langFrom){
