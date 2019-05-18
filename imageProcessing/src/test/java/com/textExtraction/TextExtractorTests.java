@@ -25,7 +25,7 @@ public class TextExtractorTests {
 	
 	@Test
 	public void frenchImage() throws Exception{
-		File imageFile = ResourceUtils.getFile("classpath:image1.png");
+		File imageFile =ResourceUtils.getFile("classpath:image1.png");
 		String goal = TextExtractor.getText(imageFile).trim();
 		assertEquals(goal,"CETTE ALARME EST\nLOCALE SEULEMENT,\nEN CAS DE FEU SIGNALER");
 	}

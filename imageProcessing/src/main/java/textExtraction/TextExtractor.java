@@ -12,7 +12,7 @@ public class TextExtractor {
 	public static Tesseract getInstance() {
 		if(instance == null){
 			instance = new Tesseract();
-			File tessDataFolder = LoadLibs.extractTessResources("eng.tessdata");
+			File tessDataFolder = LoadLibs.extractTessResources("tessdata");
 			instance.setDatapath(tessDataFolder.getAbsolutePath());
 		}
 		return instance;
