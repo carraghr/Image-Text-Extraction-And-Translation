@@ -12,7 +12,7 @@ public class TextExtractor {
 	public static Tesseract getInstance() {
 		if(instance == null){
 			instance = new Tesseract();
-			File tessDataFolder = LoadLibs.extractTessResources("tessdata");
+			File tessDataFolder = LoadLibs.extractTessResources("eng.tessdata");
 			instance.setDatapath(tessDataFolder.getAbsolutePath());
 		}
 		return instance;
@@ -23,7 +23,7 @@ public class TextExtractor {
 		try {
 			text = TextExtractor.getInstance().doOCR(imageFile);
 		}catch(TesseractException e) {
-			text = "Error";
+			text = "Error Processing Image";
 			e.printStackTrace();
 		}
 		return text;
