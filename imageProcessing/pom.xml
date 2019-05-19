@@ -12,7 +12,7 @@
 	
 	<groupId>com.imageProcessingMircoservice</groupId>
 	<artifactId>imageProcessing</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<name>imageProcessing</name>
 	<description>Image processing restful web service</description>
 
