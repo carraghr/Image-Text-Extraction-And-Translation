@@ -11,47 +11,61 @@
 </head>
 <body>
 <div class="container">
-	<header class="col-cs-1 text center"> 
-		<h1>Image Text Extraction and Translation</h1>	
-	</header>
+	<div class="col-md-offset-5">
+		<header> 
+			<h1>Image Text Extraction and Translation</h1>	
+		</header>
+	</div>
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-4 offset-md-2 ">
 			<img id="imagePreview" src="#" alt="Uploaded image">
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
-			<!-- <form name="imageupload" action="http://localhost:8081/imageUpload">
-				//	<input type="file" name="imageFile" id="imageFile">
-				//	<br>
-				//	<button type="submit" class="btn btn-default" value="Uploaded Image" name="submit">Submit</button>
-				//</form> -->
+			 <form name="imageupload" action="http://localhost:8081/imageUpload">
+					<input type="file" name="imageFile" id="imageFile">
+					<br>
+					<button type="submit" class="btn btn-default" value="Uploaded Image" name="submit">Submit</button>
+				</form> 
 			</div>
 		</div>
+		<br>
+		<div class="col-md-6 offset-md-3">
+			<p>Text Extracted:</p>
+			<p></p>
+		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<div class="form-group">
-				<form id="textTranslationFrom" name="imageupload" onsubmit="getTranslation(event)" action="javascript:void(0);">
-					<textarea rows="4" cols="50" id="textSource"></textarea>
-					<label for="langFrom">Language From</label>
+
+	<div class="row ">
+		<div class="col-md-6 offset-md-2">
+			<form id="textTranslationFrom" name="imageupload" onsubmit="getTranslation(event)" action="javascript:void(0);" >
+				<div class="form-group">
+					<label for="textSource">Text to be Translated: </label>
+					<textarea class="" rows="4" id="textSource"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="langFrom">Source Language</label>
 					<select name="langFrom" id="langFrom">
 					    <option value="en" selected="selected">English</option>
 					    <option value="fr">French</option>
 					</select>
-					<label for="langTo">Language TO</label>
+					<br>
+					<label for="langTo">Target Language</label>
 					<select name="langTo" id="langTo">
 					    <option value="en" selected="selected">English</option>
 					    <option value="fr">French</option>
 					</select>
-					<button type="submit" class="btn btn-default" value="text translation" name="submit">Submit</button>
-				</form>
-				<br>
-				<br>
-				<p id="translatedText"></p>
-			</div>
+				</div>
+				<button type="submit" class="btn btn-default" value="text translation" name="submit">Submit</button>
+			</form>
+		</div>
+		<br>
+		<div class="col-md-6 offset-md-3">
+			<p id="translatedText">Something Said</p>
+			<p></p>
 		</div>
 	</div>
-</div>
+
 <script type="text/javascript" src="js/imageDisplay.js"></script>
 <script type="text/javascript" src="js/textTranslation.js"></script>
 </body>
