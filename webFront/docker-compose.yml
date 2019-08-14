@@ -1,0 +1,26 @@
+version: "3"
+services:
+  web:
+    image: web-front
+    networks:
+      - image-translation-service
+    depends_on:
+      - translator
+      - extraction
+      
+  translator:
+    image: text-translation
+    ports:
+      - "8080:8080"
+    networks:
+      - image-translation-service
+      
+  extraction:
+    image: image-processing
+    ports:
+      - "8181:8181"
+    networks:
+      - image-translation-service
+      
+networks:
+  image-translation-service:
