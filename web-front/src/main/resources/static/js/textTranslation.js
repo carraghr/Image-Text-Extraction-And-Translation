@@ -5,7 +5,6 @@ function getTranslation(){
 	
 	var langFrom = document.getElementById("langTo");
 	var langFromTran = langFrom.options[langFrom.selectedIndex].value;
-	console.log("he;ll");
 	var xhttp = new XMLHttpRequest();
 	xhttp.onload = function() {
         alert(http.responseText);
@@ -16,7 +15,7 @@ function getTranslation(){
 		}
 	}
 	
-	var url = "localhost:8081/translate?text="+source+"&langTo="+langToTran+"&langFrom="+langFromTran;
+	var url = "translator:8081/translate?text="+source+"&langTo="+langToTran+"&langFrom="+langFromTran;
 	
 	xhttp.open('GET',url,true);
 	xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
