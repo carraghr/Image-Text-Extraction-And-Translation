@@ -1,7 +1,7 @@
 version: "3"
 services:
   web:
-    image: web-front
+    image: carraghr/web-front
     networks:
       - image-translation-service
     depends_on:
@@ -9,14 +9,14 @@ services:
       - extraction
       
   translator:
-    image: text-translation
+    image: carraghr/text-translator
     ports:
       - "8080:8080"
     networks:
       - image-translation-service
       
   extraction:
-    image: image-processing
+    image: carraghr/image-processing
     ports:
       - "8181:8181"
     networks:
