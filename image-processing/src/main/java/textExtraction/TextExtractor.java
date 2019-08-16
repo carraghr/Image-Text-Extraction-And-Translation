@@ -21,7 +21,11 @@ public class TextExtractor {
 	public static String getText(final File imageFile){
 		String text;
 		try {
-			text = TextExtractor.getInstance().doOCR(imageFile);
+			if(TextExtractor.getInstance() != null) {
+				text = TextExtractor.getInstance().doOCR(imageFile);
+			}else {
+				text = "TextExtractor getInstance error!";
+			}
 		}catch(TesseractException e) {
 			text = "Error Processing Image";
 			e.printStackTrace();
