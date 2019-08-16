@@ -27,7 +27,7 @@ public class TextExtractor {
 				text = "TextExtractor getInstance error!";
 			}
 		}catch(TesseractException e) {
-			text = "Error Processing Image";
+			text = e.getMessage();
 			e.printStackTrace();
 		}
 		return text;
