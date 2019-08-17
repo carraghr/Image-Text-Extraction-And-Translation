@@ -1,2 +1,4 @@
 # Image-Text-Extraction-And-Translation
-Image text extraction and translation services
+Three micro services were created, one web facing interface that connected to two other micro services. The two other restful services consisted of, a service that took in an image and processed it using Tessj4 and returned a string containing extracted text from the image, and another service that took a string and returned a string containing its translated value, for example English to French. This translation service was done through the use of a Google script that the service wrapped around. The micro service system was developed in spring boot along with docker-compose to build a container system with linked containers. Maven was used as a build tool and Junit as testing.
+
+Project will no long be supported as google script for translation is no longer been deployed.
