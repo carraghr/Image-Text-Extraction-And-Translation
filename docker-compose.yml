@@ -1,0 +1,29 @@
+version: "3"
+services:
+  web:
+    image: carraghr/web-front
+    #have public facing web page for project
+    ports:
+      - "8080:8080"
+    networks:
+      - image-translation-service
+    depends_on:
+      - translator
+      - extraction
+      
+  translator:
+    image: carraghr/text-translator
+    expose:
+      - "8081:8081"
+    networks:
+      - image-translation-service
+      
+  extraction:
+    image: carraghr/image-processing
+    expose:
+      - "8082:8082"
+    networks:
+      - image-translation-service
+      
+networks:
+  image-translation-service:
